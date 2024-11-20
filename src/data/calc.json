@@ -1,0 +1,11 @@
+[
+  
+  {
+      "nome:":"string",
+      "potencia": "number",
+      "tempoUso": "number",
+      "quantidade": "number"
+    }
+    
+  ]
+  

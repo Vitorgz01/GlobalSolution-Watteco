@@ -12,7 +12,7 @@ export default function ParticipantCards() {
       imageSrc: vitorImg,
     },
     {
-      name: "Gay",
+      name: "Gabriel Gomes Mancera",
       rm: "RM558424",
       imageSrc: gomesImg,
     },

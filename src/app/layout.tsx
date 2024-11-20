@@ -1,19 +1,25 @@
+"use client";
+import { SessionProvider } from "next-auth/react";
+import { WattecoAuthProvider } from "../app/contexts/WattecoAuthContext";
 import Header from "@/components/Header";
-import "./globals.css";
 import Footer from "@/components/Footer";
-import { AuthProvider } from "./contexts/AuthContext";
+import "./globals.css";
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="pt-BR">
       <body>
-        <Header />
-        <AuthProvider>{children}</AuthProvider>
-        <Footer />
+        <SessionProvider>
+          <WattecoAuthProvider>
+            <Header />
+            {children}
+            <Footer />
+          </WattecoAuthProvider>
+        </SessionProvider>
       </body>
     </html>
   );

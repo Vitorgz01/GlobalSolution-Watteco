@@ -1,31 +1,23 @@
 import Image from "next/image";
-import lightbulbIcon from "@/image/icons/lightbulb.png";
-import solarPanelIcon from "@/image/icons/solar-panel.png";
-import windTurbineIcon from "@/image/icons/wind-turbine.png";
-import recycleIcon from "@/image/icons/recycle.png";
 
 const energyInfoItems = {
   cards: [
     {
-      icon: lightbulbIcon,
       title: "Eficiência Energética",
       info: "Trocar lâmpadas incandescentes por LEDs pode reduzir o consumo de energia em até 90%.",
       tip: "Dica: Aproveite a luz natural sempre que possível.",
     },
     {
-      icon: solarPanelIcon,
       title: "Energia Solar",
       info: "A energia solar pode suprir até 100% da demanda elétrica de uma residência.",
       tip: "Dica: Considere instalar painéis solares para economia a longo prazo.",
     },
     {
-      icon: windTurbineIcon,
       title: "Energia Eólica",
       info: "Uma única turbina eólica pode gerar energia suficiente para abastecer até 1.400 residências.",
       tip: "Dica: Apoie iniciativas de energia eólica em sua comunidade.",
     },
     {
-      icon: recycleIcon,
       title: "Reciclagem e Energia",
       info: "Reciclar uma lata de alumínio economiza energia suficiente para manter uma TV ligada por 3 horas.",
       tip: "Dica: Separe seu lixo e recicle sempre que possível.",
@@ -53,11 +45,6 @@ export default function EnergyInfoCards() {
             key={index}
             className="bg-white rounded-lg shadow-lg p-6 text-center transform transition hover:scale-105 hover:shadow-xl"
           >
-            <Image
-              src={item.icon}
-              alt={`Ícone de ${item.title}`}
-              className="w-16 h-16 mx-auto mb-4"
-            />
             <h3 className="text-green-700 font-semibold text-xl mb-2">
               {item.title}
             </h3>

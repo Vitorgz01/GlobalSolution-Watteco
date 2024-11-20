@@ -12,24 +12,13 @@ import {
 } from "lucide-react";
 import { useEffect, useContext } from "react";
 import { useRouter } from "next/navigation";
-import { AuthContext } from "@/app/contexts/AuthContext";
+import { WattecoAuthContext } from "@/app/contexts/WattecoAuthContext";
 import { parseCookies } from "nookies";
-import { api } from "@/services/api";
 import casa from "@/image/5-maneiras-de-deixar-sua-casa-com-mais-eficiencia-energetica.jpg";
 
 export default function WattecoBlogPost() {
-  const { user } = useContext(AuthContext);
+  const { user } = useContext(WattecoAuthContext);
   const router = useRouter();
-
-  useEffect(() => {
-    const { "challenge.token": token } = parseCookies();
-
-    if (!token) {
-      router.push("/educacional");
-    } else {
-      api.get("/educacional");
-    }
-  }, [router]);
 
   const relatedPosts = [
     { title: "Como escolher eletrodomésticos eficientes", icon: Lightbulb },

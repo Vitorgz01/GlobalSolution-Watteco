@@ -46,6 +46,7 @@ export default function WattecoBanner() {
           </p>
           <Link href="/calculadora">
             {" "}
+            {/* Use Link para redirecionamento */}
             <Button
               size="lg"
               className="bg-green-500 hover:bg-green-600 text-white transition-all duration-300 ease-in-out transform hover:scale-105"

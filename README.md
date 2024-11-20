@@ -1,24 +1,36 @@
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-# Watteco
+## Getting Started
 
+First, run the development server:
 
-## Integrantes:
-- Vitor Ginza - RM: 554849 -Turma: 1TDSPI - 2024 - Github: github.com/Vitorgz01
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-- Gabriel Gomes - RM: 555427 - Turma: 1TDSPI - 2024 - Github: github.com/GomesMancera
-## Layout do projeto
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-# Tecnologias utilizadas
-- HTML
-- CSS
-- Next.js
-- Typescript
-- React.js 
-- Java
-- Python
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Sobre o Projeto 
-### Projeto Globlal Solution - Watteco
+## Learn More
 
-A Watteco é uma plataforma digital de eficiência energética que possibilita que usuários residenciais monitorem e compreendam melhor seu consumo de energia. Mais do que uma calculadora de eficiência, ela é um sistema educativo e analítico, projetado para fornecer informações práticas e incentivar uma cultura de sustentabilidade. A Watteco atende a um público cada vez mais atento ao impacto ambiental de suas atividades cotidianas, oferecendo um meio acessível para que eles reduzam seu consumo de energia e economizem em suas contas. 
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
