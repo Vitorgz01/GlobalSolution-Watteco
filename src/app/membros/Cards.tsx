@@ -8,12 +8,12 @@ export default function ParticipantCards() {
   const participants = [
     {
       name: "Vitor de Oliveira Ginza",
-      rm: "RM5554849",
+      rm: "RM5554849 - 1TDSPL",
       imageSrc: vitorImg,
     },
     {
       name: "Gabriel Gomes Mancera",
-      rm: "RM558424",
+      rm: "RM558424 - 1TDSPL",
       imageSrc: gomesImg,
     },
   ];
