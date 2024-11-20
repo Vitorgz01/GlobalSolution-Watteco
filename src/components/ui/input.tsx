@@ -1,5 +1,6 @@
 import * as React from "react";
 
+// Definição do componente Input com a tipagem correta diretamente
 const Input = React.forwardRef<
   HTMLInputElement,
   React.InputHTMLAttributes<HTMLInputElement>
@@ -14,6 +15,7 @@ const Input = React.forwardRef<
   );
 });
 
+// Definir o displayName para o componente, útil para debug e desenvolvimento
 Input.displayName = "Input";
 
 export { Input };
