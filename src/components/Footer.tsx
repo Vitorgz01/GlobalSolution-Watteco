@@ -9,7 +9,13 @@ import { Input } from "@/components/ui/input";
 
 import logo from "@/image/foto_curriculo-removebg-preview.png";
 
-const FooterSection = ({ title, items }) => {
+// Definir tipos explícitos para os props do FooterSection
+interface FooterSectionProps {
+  title: string;
+  items: string[];
+}
+
+const FooterSection = ({ title, items }: FooterSectionProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
