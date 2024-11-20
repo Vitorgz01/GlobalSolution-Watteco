@@ -20,6 +20,7 @@
     "react-hooks/exhaustive-deps": "off",
     "react/jsx-key": "off",
     "no-extra-semi": "off",
-    "no-useless-catch": "off"
+    "no-useless-catch": "off",
+    "@typescript-eslint/no-empty-object-type": "off"
   }
 }
