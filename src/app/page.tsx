@@ -1,6 +1,6 @@
 import Banner from "@/components/Banner";
 
-import Info from "@/components/Info";
+import Feedback from "@/components/Feedback";
 import Maps from "@/components/Maps";
 import WatsonChat from "@/components/WatsonChat";
 
@@ -9,8 +9,10 @@ export default function Home() {
     <>
       <WatsonChat />
       <Banner />
+
       <Maps />
-      <Info />
+
+      <Feedback />
     </>
   );
 }

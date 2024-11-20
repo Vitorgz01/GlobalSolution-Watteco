@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useSession } from "next-auth/react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -14,7 +15,6 @@ import {
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Plus, Trash2, Save } from "lucide-react";
 import { toast } from "@/components/ui/use-toast";
-import { useSession } from "next-auth/react";
 
 interface Aparelho {
   nome: string;
@@ -32,7 +32,7 @@ export default function CalculadoraEficienciaEnergetica() {
     quantidade: 1,
   });
   const mediaConsumo = 250; // kWh
-  const { data: session } = useSession();
+  const { data: session, status } = useSession();
 
   const adicionarAparelho = () => {
     if (
@@ -63,7 +63,7 @@ export default function CalculadoraEficienciaEnergetica() {
   );
 
   const salvarDados = async () => {
-    if (!session) {
+    if (status !== "authenticated") {
       toast({
         title: "Erro de autenticação",
         description: "Por favor, faça login para salvar os dados.",
