@@ -3,6 +3,13 @@
 import React, { useEffect } from "react";
 import { FaClock, FaExclamationTriangle, FaUser } from "react-icons/fa";
 
+// Declaração global para reconhecer window.google
+declare global {
+  interface Window {
+    google: any;
+  }
+}
+
 const Maps = () => {
   useEffect(() => {
     const loadGoogleCharts = () => {
