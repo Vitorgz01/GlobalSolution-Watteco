@@ -7,7 +7,8 @@
 - Gabriel Gomes - RM: 555427 - Turma: 1TDSPI - 2024 - Github: github.com/GomesMancera
 
 ## Layout do projeto
-
+![image alt](https://github.com/Vitorgz01/GlobalSolution-Watteco/blob/d1b5bc7790652b838ef6fb5c8cbcc96556f5e309/src/image/Projeto1.png)
+![image alt](https://github.com/Vitorgz01/GlobalSolution-Watteco/blob/d1b5bc7790652b838ef6fb5c8cbcc96556f5e309/src/image/projeto2.png)
 # Tecnologias utilizadas
 
 - HTML
