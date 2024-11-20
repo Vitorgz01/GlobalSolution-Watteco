@@ -1,13 +1,16 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { getSession } from 'next-auth/react'
+import { parseCookies } from 'nookies'
+import { wattecoApi } from '@/services/wattecoServices'
 
-type CalculadoraData = {
-  aparelhos: Array<{
-    nome: string
-    potencia: number
-    tempoUso: number
-    quantidade: number
-  }>
+type WattecoAparelho = {
+  nome: string
+  potencia: number
+  tempoUso: number
+  quantidade: number
+}
+
+type WattecoCalculadoraData = {
+  aparelhos: WattecoAparelho[]
   consumoTotalMensal: number
   acimaMedia: boolean
 }
@@ -16,54 +19,49 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const session = await getSession({ req })
+  const { 'watteco.token': token } = parseCookies({ req })
 
-  if (!session) {
+  if (!token) {
     return res.status(401).json({ error: 'Não autorizado' })
   }
 
   if (req.method === 'POST') {
     try {
-      const data: CalculadoraData = req.body
+      const data: WattecoCalculadoraData = req.body
 
-      // Here, you would typically send this data to your backend
-      const backendResponse = await fetch('https://seu-backend.com/api/salvar-dados-calculadora', {
-        method: 'POST',
+      const backendResponse = await wattecoApi.post('/api/salvar-dados-calculadora', data, {
         headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${session.accessToken}` // Assuming you have the access token in the session
-        },
-        body: JSON.stringify(data)
-      })
-
-      if (!backendResponse.ok) {
-        throw new Error('Falha ao salvar os dados no backend')
-      }
-
-      const result = await backendResponse.json()
-
-      res.status(200).json({ message: 'Dados salvos com sucesso', id: result.id })
-    } catch (error) {
-      res.status(500).json({ error: 'Erro ao salvar dados' })
-    }
-  } else if (req.method === 'GET') {
-    try {
-      // Fetch data from your backend
-      const backendResponse = await fetch('https://seu-backend.com/api/dados-calculadora', {
-        headers: {
-          'Authorization': `Bearer ${session.accessToken}` // Assuming you have the access token in the session
+          'Authorization': `Bearer ${token}`
         }
       })
 
-      if (!backendResponse.ok) {
-        throw new Error('Falha ao recuperar os dados do backend')
+      if (backendResponse.status !== 200) {
+        throw new Error('Falha ao salvar os dados no backend da Watteco')
       }
 
-      const data = await backendResponse.json()
+      const result = backendResponse.data
+
+      res.status(200).json({ message: 'Dados salvos com sucesso na Watteco', id: result.id })
+    } catch (error) {
+      res.status(500).json({ error: 'Erro ao salvar dados na Watteco' })
+    }
+  } else if (req.method === 'GET') {
+    try {
+      const backendResponse = await wattecoApi.get('/api/dados-calculadora', {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      })
+
+      if (backendResponse.status !== 200) {
+        throw new Error('Falha ao recuperar os dados do backend da Watteco')
+      }
+
+      const data = backendResponse.data
 
       res.status(200).json(data)
     } catch (error) {
-      res.status(500).json({ error: 'Erro ao recuperar dados' })
+      res.status(500).json({ error: 'Erro ao recuperar dados da Watteco' })
     }
   } else {
     res.setHeader('Allow', ['POST', 'GET'])
