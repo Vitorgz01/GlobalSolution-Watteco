@@ -9,11 +9,14 @@ export default function ParticipantCards() {
     {
       name: "Vitor de Oliveira Ginza",
       rm: "RM5554849 - 1TDSPL",
+      git: "Git Hub: Vitorgz01",
+      link: "Linkedin: www.linkedin.com/in/vitorginza",
       imageSrc: vitorImg,
     },
     {
       name: "Gabriel Gomes Mancera",
       rm: "RM558424 - 1TDSPL",
+      git: "Git Hub: 	GomesMancera",
       imageSrc: gomesImg,
     },
   ];
