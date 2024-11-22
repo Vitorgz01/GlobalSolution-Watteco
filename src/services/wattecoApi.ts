@@ -5,7 +5,7 @@ export function getWattecoApiClient(ctx?: any) {
   const { 'watteco.token': token } = parseCookies(ctx)
 
   const wattecoApi = axios.create({
-    baseURL: 'https://api.watteco.com' // Replace with your actual API base URL
+    baseURL: 'http://localhost:8080/api' // Replace with your actual API base URL
   })
 
   wattecoApi.interceptors.request.use(config => {
