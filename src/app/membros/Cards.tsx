@@ -47,6 +47,12 @@ export default function ParticipantCards() {
                     {participant.name}
                   </h3>
                   <p className="text-muted-foreground">{participant.rm}</p>
+                  <h3 className="font-semibold text-lg mb-1">
+                    {participant.git}
+                  </h3>
+                  <h3 className="font-semibold text-lg mb-1">
+                    {participant.link}
+                  </h3>
                 </div>
               </CardContent>
             </Card>
